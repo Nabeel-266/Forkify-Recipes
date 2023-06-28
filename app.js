@@ -1,6 +1,6 @@
 const searchBtn = document.querySelector('.searchBtn');
 const searchInput = document.getElementById('searching');
-
+const searchItemsArea = document.querySelector(".searchItems");
 
 searchBtn.addEventListener('click', searchItem);
 
@@ -24,27 +24,27 @@ function searchItem() {
         .catch(err => console.error(err))
 
 
-
+    searchItemsArea.innerHTML = "";
     console.log(searchUserItem)
 }
-
-const searchItemsArea = document.querySelector(".searchItems");
 
 const displayItems = (getItems) => {
 
     for (let recipeItem of getItems.data.recipes) {
-        const item = document.createElement('div');
-        item.setAttribute("class", "item");
+        const srchItem = document.createElement('div');
+        srchItem.setAttribute("class", "srchItem");
 
-        const itemContent = `<div class="itemImage">
-                                <img src="${recipeItem.image_url}" alt="" class="img-fluid">
-                            </div>
-                            <div class="itemName p-0">
-                                <h2 class="m-0">${recipeItem.title}</h2>
-                                <h5 class="m-0">${recipeItem.publisher}</h5>
+        const itemContent = `<div class="item" id="${recipeItem.id}">
+                                <div class="itemImage">
+                                    <img src="${recipeItem.image_url}" alt="" class="img-fluid">
+                                </div>
+                                <div class="itemName p-0">
+                                    <h2 class="m-0">${recipeItem.title}</h2>
+                                    <h5 class="m-0">${recipeItem.publisher}</h5>
+                                </div>
                             </div>`;
 
-        item.innerHTML = itemContent;
-        searchItemsArea.appendChild(item);
+        srchItem.innerHTML = itemContent;
+        searchItemsArea.appendChild(srchItem);
     }
 }

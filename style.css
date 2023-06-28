@@ -173,10 +173,15 @@ input::-webkit-search-cancel-button {
     transition: all 0.3s ease;
 }
 
-.searchItems .item {
+.searchItems .srchItem {
+    width: 100%;
+}
+
+.srchItem .item {
     width: 100%;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     padding: 14px 35px;
     background-color: transparent;
     /* border: 1px solid black; */
@@ -206,7 +211,6 @@ input::-webkit-search-cancel-button {
 .item .itemName {
     width: 78%;
     height: 100%;
-    /* padding: 0px 0px !important; */
     display: flex;
     flex-direction: column;
     justify-content: center;
