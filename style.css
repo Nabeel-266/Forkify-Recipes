@@ -1,0 +1,236 @@
+@import url('https://fonts.googleapis.com/css2?family=K2D:wght@100;200;300;400;500;600;700;800&family=Macondo&family=Poppins:wght@200;300;400;500;600;700;800&family=Sacramento&family=Tsukimi+Rounded:wght@300;400;500;600;700&family=Varela+Round&display=swap');
+
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 10px;
+}
+
+body {
+    font-family: "Poppins", sans-serif !important;
+}
+
+:root {
+    --primary-Color: #fad888;
+    --secondary-Color: #f48c82;
+    --white-Color: #ffffff;
+    --black-Color: #090909;
+    --text-Color-Dark: #111111;
+    --text-Color-Medium: #888888;
+    --text-Color-Light: #ffffff;
+}
+
+.mainCont {
+    width: 100vw;
+    background: var(--primary-Color);
+    background: linear-gradient(to top left, #f48c82, #fad888);
+    background: -webkit-linear-gradient(to top left, #f48c82, #fad888);
+    padding: 4vh 40px 0px 40px !important;
+}
+
+.mainCont .subCont {
+    width: 100%;
+    min-height: 96vh;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 10px 10px 0px 0px;
+    overflow: hidden;
+}
+
+.subCont .navbar {
+    height: 12vh;
+    min-height: 12vh;
+    /* background-color: aquamarine; */
+}
+
+.logoArea,
+.searchArea,
+.optionArea {
+    height: 100%;
+    padding: 15px 20px !important;
+}
+
+.logoArea .logo {
+    width: 100%;
+    height: 100%;
+    /* background-color: lightcoral; */
+    padding: 0px 20px;
+}
+
+.logo img {
+    height: 100%;
+    object-fit: cover;
+}
+
+.searchArea .searchbar {
+    width: 100%;
+    height: 100%;
+    background-color: var(--white-Color);
+    padding: 0px 0px;
+    border-radius: 100px;
+    overflow: hidden;
+    position: relative;
+}
+
+.searchbar input {
+    width: 73%;
+    height: 100%;
+    padding: 0px 20px;
+    border: 0px;
+    outline: 0px;
+    font-size: 1.6rem;
+    background-color: transparent;
+}
+
+input::-webkit-search-cancel-button {
+    display: none;
+}
+
+.searchbar input::placeholder {
+    color: rgb(180, 180, 180);
+}
+
+.searchbar .searchButton {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    overflow: hidden;
+}
+
+.searchButton button {
+    border: 0px;
+    outline: 0px;
+    height: 100%;
+    padding: 0px 32px;
+    border-radius: 100px;
+    font-size: 1.6rem;
+    color: var(--text-Color-Light);
+    background: linear-gradient(to top left, var(--secondary-Color), var(--primary-Color));
+}
+
+.optionArea .options {
+    width: 100%;
+    height: 100%;
+    /* background-color: lightcoral; */
+    padding: 0px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.options button {
+    border: 0px;
+    outline: 0px;
+    /* height: 100%; */
+    padding: 1px 10px;
+    border-radius: 10px;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-family: 'Varela Round', sans-serif;
+    color: var(--text-Color-Dark);
+    background-color: transparent;
+    display: flex;
+    align-items: flex-start;
+}
+
+.options button i {
+    font-size: 2.2rem;
+    color: var(--secondary-Color);
+}
+
+.subCont .searchItemArea {
+    height: 84vh;
+    min-height: 84vh;
+}
+
+.searchItemArea .searchItems {
+    height: 100%;
+    background-color: var(--white-Color);
+    padding: 20px 0px;
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+    overflow: auto;
+}
+
+.searchItems::-webkit-scrollbar {
+    width: 8px;
+}
+
+.searchItems::-webkit-scrollbar-track {
+    background: var(--white-Color);
+}
+
+.searchItems::-webkit-scrollbar-thumb {
+    background: linear-gradient(to top, var(--secondary-Color), var(--primary-Color));
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+.searchItems .item {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 14px 35px;
+    background-color: transparent;
+    /* border: 1px solid black; */
+    transition: all 0.2s linear;
+}
+
+.item:hover {
+    background-color: rgba(244, 140, 130, 0.1);
+}
+
+.item .itemImage {
+    width: 57px;
+    height: 57px;
+    border-radius: 100%;
+    /* border: 2px solid var(--secondary-Color); */
+    /* background-color: lightslategray; */
+    overflow: hidden;
+}
+
+.itemImage img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: contrast(0.8);
+}
+
+.item .itemName {
+    width: 78%;
+    height: 100%;
+    /* padding: 0px 0px !important; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    font-family: "Varela Round", sans-serif;
+}
+
+.itemName h2 {
+    font-size: 1.6rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    color: #f48c82;
+}
+
+.itemName h5 {
+    font-size: 1.25rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: var(--text-Color-Medium);
+}
+
+.searchItemArea .itemRecipe {
+    height: 100%;
+}
