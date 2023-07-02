@@ -20,7 +20,7 @@ body {
     --white-Color: #ffffff;
     --black-Color: #090909;
     --text-Color-Dark: #111111;
-    --text-Color-Medium: #888888;
+    --text-Color-Medium: #444444;
     --text-Color-Light: #ffffff;
 }
 
@@ -144,12 +144,12 @@ input::-webkit-search-cancel-button {
     color: var(--secondary-Color);
 }
 
-.subCont .searchItemArea {
+.subCont .contentArea {
     height: 84vh;
     min-height: 84vh;
 }
 
-.searchItemArea .searchItems {
+.contentArea .searchItemsArea {
     height: 100%;
     background-color: var(--white-Color);
     padding: 20px 0px;
@@ -159,21 +159,35 @@ input::-webkit-search-cancel-button {
     overflow: auto;
 }
 
-.searchItems::-webkit-scrollbar {
+.searchItemsArea::-webkit-scrollbar {
     width: 8px;
 }
 
-.searchItems::-webkit-scrollbar-track {
+.searchItemsArea::-webkit-scrollbar-track {
     background: var(--white-Color);
 }
 
-.searchItems::-webkit-scrollbar-thumb {
+.searchItemsArea::-webkit-scrollbar-thumb {
     background: linear-gradient(to top, var(--secondary-Color), var(--primary-Color));
     border-radius: 12px;
     transition: all 0.3s ease;
 }
 
-.searchItems .srchItem {
+.searchItemsArea .errorMsg {
+    width: 100%;
+    padding: 20px;
+    display: none;
+}
+
+.errorMsg h2 {
+    text-align: center;
+    font-size: 1.8rem;
+    color: var(--text-Color-Medium);
+    font-family: "Varela Round", sans-serif;
+    color: var(--secondary-Color);
+}
+
+.searchItemsArea .srchItem {
     width: 100%;
 }
 
@@ -184,8 +198,8 @@ input::-webkit-search-cancel-button {
     align-items: center;
     padding: 14px 35px;
     background-color: transparent;
-    /* border: 1px solid black; */
     transition: all 0.2s linear;
+    cursor: pointer;
 }
 
 .item:hover {
@@ -196,8 +210,6 @@ input::-webkit-search-cancel-button {
     width: 57px;
     height: 57px;
     border-radius: 100%;
-    /* border: 2px solid var(--secondary-Color); */
-    /* background-color: lightslategray; */
     overflow: hidden;
 }
 
@@ -235,6 +247,223 @@ input::-webkit-search-cancel-button {
     color: var(--text-Color-Medium);
 }
 
-.searchItemArea .itemRecipe {
+.contentArea .itemRecipeArea {
     height: 100%;
+    /* background-color: #888888; */
+}
+
+.itemRecipeArea .defaultMsg {
+    padding: 30px;
+    text-align: center;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 10px;
+}
+
+.defaultMsg i {
+    font-size: 2rem;
+    color: var(--secondary-Color);
+}
+
+.defaultMsg h2 {
+    font-size: 1.8rem;
+    font-family: "Varela Round", sans-serif;
+    color: var(--text-Color-Medium);
+    line-height: 2.4rem;
+}
+
+.itemRecipeArea .itemRecipe {
+    height: 100%;
+    overflow: auto;
+    position: relative;
+}
+
+.itemRecipe::-webkit-scrollbar {
+    width: 8px;
+}
+
+.itemRecipe::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.itemRecipe::-webkit-scrollbar-thumb {
+    background: linear-gradient(to top, var(--secondary-Color), var(--primary-Color));
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+.itemRecipe .itemRecipeAbout {
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.itemRecipeAbout .itemRecipeImage {
+    width: 100%;
+    height: 70%;
+    overflow: hidden;
+}
+
+.itemRecipeImage img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.8;
+    filter: brightness(0.8);
+}
+
+.itemRecipeAbout .itemRecipeTitle {
+    position: absolute;
+    max-width: 80%;
+    bottom: 24%;
+    padding: 15px 20px;
+    background: linear-gradient(to top, var(--secondary-Color), var(--primary-Color));
+    color: var(--text-Color-Light);
+    border-radius: 4px;
+    transform: skewY(-2deg);
+}
+
+.itemRecipeTitle h2 {
+    font-size: 2.4rem;
+    font-weight: bold;
+    font-family: "Varela Round", sans-serif;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.itemRecipeAbout .itemRecipeAbt {
+    width: 100%;
+    height: 30%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 0px 80px 30px 80px;
+}
+
+.itemRecipeAbt .rcpAbt {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.rcpAbt .time,
+.rcpAbt .serve {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.time h5,
+.serve h5 {
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    font-family: "Varela Round", sans-serif;
+    color: var(--text-Color-Medium);
+}
+
+.time h5 span,
+.serve h5 span {
+    font-weight: bold;
+}
+
+.time i {
+    font-size: 2rem;
+    color: var(--secondary-Color);
+}
+
+.serve i {
+    font-size: 2.4rem;
+    color: var(--secondary-Color);
+}
+
+.itemRecipeAbt .rcpSavedBtn {
+    border: none;
+    outline: none;
+    border-radius: 100%;
+    font-size: 2rem;
+    font-weight: bold;
+    padding: 12px 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to top, var(--secondary-Color), var(--primary-Color));
+    color: var(--text-Color-Light);
+}
+
+.itemRecipe .itemRecipeIngredients {
+    width: 100%;
+    background-color: #f7e1e1;
+    padding: 5% 10%;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.itemRecipeIngredients .rcpIngredientHd {
+    text-align: center;
+}
+
+.rcpIngredientHd h4 {
+    font-size: 2rem;
+    color: var(--secondary-Color);
+    font-family: "Varela Round", sans-serif;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.itemRecipeIngredients .rcpIngredients {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    /* padding: 20px 0px; */
+}
+
+.rcpIngredients .ingredient {
+    width: 50%;
+    padding: 10px 0px;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.ingredient i {
+    font-size: 1.8rem;
+    color: var(--secondary-Color);
+}
+
+.ingredient p {
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: var(--text-Color-Medium);
+}
+
+.itemRecipe .itemRecipeDescription {
+    width: 100%;
+    padding: 6% 12%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+    font-family: "Varela Round", sans-serif;
+}
+
+.itemRecipeDescription h4 {
+    font-size: 2rem;
+    color: var(--secondary-Color);
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.itemRecipeDescription p {
+    font-size: 1.6rem;
+    color: var(--text-Color-Medium);
+}
+
+.itemRecipeDescription p span {
+    font-weight: bold;
 }
